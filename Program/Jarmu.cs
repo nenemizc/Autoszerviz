@@ -31,12 +31,12 @@ namespace Program
             UzemanyagSzint = uzemanyagSzint;
         }
 
-        public void InformaciotAd()
+        public virtual void InformaciotAd()
         {
             Console.WriteLine($"{Rendszam} - {Kor} éves jármű, {KilometerOra} km-rel");
         }
 
-        public void Szervizel(int dij)
+        public virtual void Szervizel(int dij)
         {
             if (dij > 100000)
             {
