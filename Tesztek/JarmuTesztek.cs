@@ -199,5 +199,26 @@ namespace Tesztek
             Assert.That(auto.KilometerOra, Is.EqualTo(190000));
             Assert.That(auto.AkkumulatorSzint, Is.EqualTo(70));
         }
+
+        // -------------------------
+        // Extra motor teszt
+        // -------------------------
+
+        [Test]
+        public void Motor_Teszt()
+        {
+            Szerviz szerviz = new Szerviz();
+
+            Motor motor = new Motor("ABC-123", 3, 15000, 50);
+
+            motor.KerekekSzama = -6;
+
+            Assert.That(motor.KerekekSzama, Is.EqualTo(0));
+
+            motor.Szervizel(150000);
+
+            Assert.That(motor.KerekekSzama, Is.EqualTo(2));
+
+        }
     }
 }
